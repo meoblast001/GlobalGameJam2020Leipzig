@@ -1,0 +1,6 @@
+The following assets come from the asset store and must be included (using default settings) into the directory Asset
+Store.
+
+========================================================================================================================
+
+* ...
