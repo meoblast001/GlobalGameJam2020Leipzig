@@ -53,9 +53,12 @@ public class MainPlayerMovement : MonoBehaviour
         this.rb.AddForce(new Vector3(this.movement.x + (rightShift - leftShift), 0f, 0f), ForceMode.Impulse);
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        this.jumpStatus = JumpStatus.None;
+        if (collision.gameObject.CompareTag("Ground") && this.jumpStatus != JumpStatus.None)
+        {
+            this.jumpStatus = JumpStatus.None;
+        }
     }
 
     void OnEnable()
@@ -71,6 +74,8 @@ public class MainPlayerMovement : MonoBehaviour
     private void TryJump()
     {
         if (this.jumpStatus == JumpStatus.None)
+        {
             this.jumpStatus = JumpStatus.Jumping;
+        }
     }
 }
