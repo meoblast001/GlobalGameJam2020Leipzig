@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 4527291847804513751}
   - component: {fileID: 4173894128566159891}
   - component: {fileID: 6976768183503792682}
+  - component: {fileID: 423197310251955717}
   m_Layer: 5
   m_Name: HealthNumbers
   m_TagString: Untagged
@@ -233,6 +234,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &423197310251955717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080389128170610465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d581a8dff7c7071968caa4fe16dbf73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenText: {fileID: 8831571313375752136}
+  hipText: {fileID: 7779891783647554260}
+  rightLegText: {fileID: 3038490631650618208}
+  leftLegText: {fileID: 888205927136762715}
+  weaponText: {fileID: 8201757614556290767}
+  shieldText: {fileID: 4200050926785866612}
 --- !u!1 &3656093240640658738
 GameObject:
   m_ObjectHideFlags: 0
