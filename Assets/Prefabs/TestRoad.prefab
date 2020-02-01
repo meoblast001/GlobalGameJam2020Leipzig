@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4399376046821530634}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4399376046821530869}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1f76029b76661d7a7bc8a2627768a8c4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 6987948869651217436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4399376046821530633}
   - {fileID: 4399376048036481726}

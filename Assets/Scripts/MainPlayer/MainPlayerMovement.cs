@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MainPlayerMovement : MonoBehaviour
@@ -13,10 +14,16 @@ public class MainPlayerMovement : MonoBehaviour
 
     public InputMaster controls;
 
-    public float moveSpeed = 2f;
-    public float jumpVelocity = 5f;
+    public float forwardSpeed = 25f;
+    public float moveSpeed = 15f;
+    public float jumpVelocity = 10f;
+    public float maxShiftSpeed = 1f;
 
     private Rigidbody rb;
+
+    [Inject]
+    private HealthStatus healthStatus;
+
     private Vector2 movement;
     private JumpStatus jumpStatus = JumpStatus.None;
 
@@ -37,16 +44,27 @@ public class MainPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (this.jumpStatus == JumpStatus.Jumping)
-        {]
+        {
             this.rb.AddForce(new Vector3(0f, this.jumpVelocity, 0f), ForceMode.Impulse);
             this.jumpStatus = JumpStatus.Falling;
         }
-        this.rb.AddForce(new Vector3(this.movement.x, 0f, 0f), ForceMode.Impulse);
+
+        if (this.jumpStatus == JumpStatus.None)
+        {
+            var leftShift = (HealthStatus.MaxHealth - this.healthStatus.LeftLeg) * 0.01f * this.maxShiftSpeed;
+            var rightShift = (HealthStatus.MaxHealth - this.healthStatus.RightLeg) * 0.01f * this.maxShiftSpeed;
+            this.rb.AddForce(new Vector3(this.movement.x + (rightShift - leftShift), 0f, 0f), ForceMode.Impulse);
+        }
+
+        this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, this.forwardSpeed);
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        this.jumpStatus = JumpStatus.None;
+        if (collision.gameObject.CompareTag("Ground") && this.jumpStatus != JumpStatus.None)
+        {
+            this.jumpStatus = JumpStatus.None;
+        }
     }
 
     void OnEnable()
@@ -62,6 +80,10 @@ public class MainPlayerMovement : MonoBehaviour
     private void TryJump()
     {
         if (this.jumpStatus == JumpStatus.None)
+        {
             this.jumpStatus = JumpStatus.Jumping;
+            this.healthStatus.LeftLeg -= 5;
+            this.healthStatus.RightLeg -= 5;
+        }
     }
 }
