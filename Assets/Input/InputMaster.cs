@@ -33,6 +33,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""d5c73c2d-e755-4c53-915f-6ee52758b8e2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -262,7 +270,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard and Mouse"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -273,10 +281,76 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Q/E"",
+                    ""id"": ""814e4a28-ebeb-4d77-88f1-7133da13848a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b7f6a2d0-bb0d-43f3-a287-2c9309716d81"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""58e1f660-4162-40fd-93a6-0f81eb9ae5b6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Shoulders"",
+                    ""id"": ""a5fa85a0-d8d6-455d-851a-6dfb9e5712ea"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""6b44e4eb-fbc9-4f52-85df-9e6c76b6611c"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9ccd63ea-0d9f-4293-8dd1-50898d42382f"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -315,6 +389,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_MainPlayer = asset.FindActionMap("MainPlayer", throwIfNotFound: true);
         m_MainPlayer_Movement = m_MainPlayer.FindAction("Movement", throwIfNotFound: true);
         m_MainPlayer_Jump = m_MainPlayer.FindAction("Jump", throwIfNotFound: true);
+        m_MainPlayer_RotateCamera = m_MainPlayer.FindAction("RotateCamera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -366,12 +441,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private IMainPlayerActions m_MainPlayerActionsCallbackInterface;
     private readonly InputAction m_MainPlayer_Movement;
     private readonly InputAction m_MainPlayer_Jump;
+    private readonly InputAction m_MainPlayer_RotateCamera;
     public struct MainPlayerActions
     {
         private @InputMaster m_Wrapper;
         public MainPlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_MainPlayer_Movement;
         public InputAction @Jump => m_Wrapper.m_MainPlayer_Jump;
+        public InputAction @RotateCamera => m_Wrapper.m_MainPlayer_RotateCamera;
         public InputActionMap Get() { return m_Wrapper.m_MainPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -387,6 +464,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnJump;
+                @RotateCamera.started -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.performed -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.canceled -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateCamera;
             }
             m_Wrapper.m_MainPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -397,6 +477,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @RotateCamera.started += instance.OnRotateCamera;
+                @RotateCamera.performed += instance.OnRotateCamera;
+                @RotateCamera.canceled += instance.OnRotateCamera;
             }
         }
     }
@@ -423,5 +506,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnRotateCamera(InputAction.CallbackContext context);
     }
 }
