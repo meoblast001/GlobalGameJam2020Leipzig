@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  jumpVelocity: 15
+  jumpVelocity: 10
   maxShiftSpeed: 1
 --- !u!136 &8277251181808026504
 CapsuleCollider:
