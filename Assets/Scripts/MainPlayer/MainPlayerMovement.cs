@@ -13,8 +13,8 @@ public class MainPlayerMovement : MonoBehaviour
 
     public InputMaster controls;
 
-    public float moveSpeed = 3f;
-    public float jumpVelocity = 20f;
+    public float moveSpeed = 2f;
+    public float jumpVelocity = 5f;
 
     private Rigidbody rb;
     private Vector2 movement;
@@ -36,13 +36,12 @@ public class MainPlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        var jumpVelocity = 0f;
         if (this.jumpStatus == JumpStatus.Jumping)
-        {
-            jumpVelocity = this.jumpVelocity;
+        {]
+            this.rb.AddForce(new Vector3(0f, this.jumpVelocity, 0f), ForceMode.Impulse);
             this.jumpStatus = JumpStatus.Falling;
         }
-        this.rb.velocity = new Vector3(this.movement.x, jumpVelocity, 0f) * this.moveSpeed;
+        this.rb.AddForce(new Vector3(this.movement.x, 0f, 0f), ForceMode.Impulse);
     }
 
     void OnCollisionStay(Collision collision)
