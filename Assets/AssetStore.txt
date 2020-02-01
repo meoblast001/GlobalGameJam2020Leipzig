@@ -3,3 +3,5 @@ The following assets come from the asset store and must be included (using defau
 ========================================================================================================================
 
 * Extenject Dependency Injection IOC
+* Medium Mech Striker
+* Oculus Integration
