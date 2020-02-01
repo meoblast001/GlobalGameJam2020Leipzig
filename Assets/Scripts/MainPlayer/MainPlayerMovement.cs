@@ -14,6 +14,7 @@ public class MainPlayerMovement : MonoBehaviour
 
     public InputMaster controls;
 
+    public float forwardSpeed = 25f;
     public float moveSpeed = 15f;
     public float jumpVelocity = 10f;
     public float maxShiftSpeed = 1f;
@@ -54,6 +55,8 @@ public class MainPlayerMovement : MonoBehaviour
             var rightShift = (HealthStatus.MaxHealth - this.healthStatus.RightLeg) * 0.01f * this.maxShiftSpeed;
             this.rb.AddForce(new Vector3(this.movement.x + (rightShift - leftShift), 0f, 0f), ForceMode.Impulse);
         }
+
+        this.rb.velocity = new Vector3(this.rb.velocity.x, this.rb.velocity.y, this.forwardSpeed);
     }
 
     void OnCollisionEnter(Collision collision)
