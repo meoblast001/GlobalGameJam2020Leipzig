@@ -14,8 +14,8 @@ public class MainPlayerMovement : MonoBehaviour
 
     public InputMaster controls;
 
-    public float moveSpeed = 2f;
-    public float jumpVelocity = 5f;
+    public float moveSpeed = 15f;
+    public float jumpVelocity = 10f;
     public float maxShiftSpeed = 1f;
 
     private Rigidbody rb;
@@ -48,9 +48,12 @@ public class MainPlayerMovement : MonoBehaviour
             this.jumpStatus = JumpStatus.Falling;
         }
 
-        var leftShift = (HealthStatus.MaxHealth - this.healthStatus.LeftLeg) * 0.01f * this.maxShiftSpeed;
-        var rightShift = (HealthStatus.MaxHealth - this.healthStatus.RightLeg) * 0.01f * this.maxShiftSpeed;
-        this.rb.AddForce(new Vector3(this.movement.x + (rightShift - leftShift), 0f, 0f), ForceMode.Impulse);
+        if (this.jumpStatus == JumpStatus.None)
+        {
+            var leftShift = (HealthStatus.MaxHealth - this.healthStatus.LeftLeg) * 0.01f * this.maxShiftSpeed;
+            var rightShift = (HealthStatus.MaxHealth - this.healthStatus.RightLeg) * 0.01f * this.maxShiftSpeed;
+            this.rb.AddForce(new Vector3(this.movement.x + (rightShift - leftShift), 0f, 0f), ForceMode.Impulse);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -76,6 +79,8 @@ public class MainPlayerMovement : MonoBehaviour
         if (this.jumpStatus == JumpStatus.None)
         {
             this.jumpStatus = JumpStatus.Jumping;
+            this.healthStatus.LeftLeg -= 5;
+            this.healthStatus.RightLeg -= 5;
         }
     }
 }
