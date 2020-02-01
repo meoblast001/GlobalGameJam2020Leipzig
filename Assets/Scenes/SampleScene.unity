@@ -328,6 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a677877b6660644be0ac5f9edc450e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketPrefab: {fileID: 3401163389454387208, guid: 7d229c59b002a3ac9ae350f348d5eea4,
+    type: 3}
 --- !u!114 &732208231
 MonoBehaviour:
   m_ObjectHideFlags: 0
