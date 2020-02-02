@@ -7,7 +7,7 @@ public class TakeDamage : MonoBehaviour
     public int collisionDamage = 10;
     public int rocketDamage = 1;
     public int bigRocketDamage = 50;
-   
+
     [Inject]
     private HealthStatus healthStatus;
 
@@ -38,7 +38,7 @@ public class TakeDamage : MonoBehaviour
         switch (item)
         {
             case HealthStatus.HealthPart.Screen:
-                this.healthStatus.Screen -= damage; 
+                this.healthStatus.Screen -= damage;
                 break;
             case HealthStatus.HealthPart.Hip:
                 this.healthStatus.Hip -= damage;
