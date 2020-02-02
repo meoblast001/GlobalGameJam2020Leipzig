@@ -38,6 +38,8 @@ public class RocketGenerator : MonoBehaviour
             = new Vector3(rocket.transform.position.x, this.transform.position.y, rocket.transform.position.z);
         var playerPos = this.player.transform.position;
         rocket.transform.LookAt(new Vector3(playerPos.x, rocket.transform.position.y, playerPos.z));
+        rocket.playerTransform = this.player.transform;
+        rocket.originalDistanceToPlayer = Vector3.Distance(rocket.transform.position, this.player.transform.position);
 
         this.StartCoroutine(this.GenerateRocket(factory, secondsCallback));
     }
