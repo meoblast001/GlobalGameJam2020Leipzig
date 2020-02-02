@@ -96,9 +96,10 @@ GameObject:
   - component: {fileID: 1388291968733439527}
   - component: {fileID: 8277251181808026504}
   - component: {fileID: 2681944689326345102}
+  - component: {fileID: 575321557477748063}
   m_Layer: 8
   m_Name: MainPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +177,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0c7e78521af9608d90291ce7b0e9bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &575321557477748063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388291968733439529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c417a4030bacf147d8fbd0797da12e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1372345476154169320
@@ -401,6 +414,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7540126174306296654}
     m_Modifications:
+    - target: {fileID: -1939477153914337310, guid: c3bc57f8c9e7c0b439f290685bc2af35,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8908607297751745850, guid: c3bc57f8c9e7c0b439f290685bc2af35,
         type: 3}
       propertyPath: m_Depth
