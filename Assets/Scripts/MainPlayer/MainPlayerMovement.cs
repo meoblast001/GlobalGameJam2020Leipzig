@@ -5,6 +5,8 @@ using Zenject;
 [RequireComponent(typeof(Rigidbody))]
 public class MainPlayerMovement : MonoBehaviour
 {
+    const int NoJumpUnderLegHealth = 30;
+
     public enum JumpStatus
     {
         None,
@@ -79,7 +81,10 @@ public class MainPlayerMovement : MonoBehaviour
 
     private void TryJump()
     {
-        if (this.jumpStatus == JumpStatus.None)
+        var healthSufficient = this.healthStatus.LeftLeg > NoJumpUnderLegHealth
+            && this.healthStatus.RightLeg > NoJumpUnderLegHealth;
+
+        if (this.jumpStatus == JumpStatus.None && healthSufficient)
         {
             this.jumpStatus = JumpStatus.Jumping;
             this.healthStatus.LeftLeg -= 5;
