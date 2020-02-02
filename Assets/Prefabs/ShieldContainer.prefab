@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f208b448115afe39a1d3020a3a3231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usageLoseHealth: 5
+  usageLoseHealthEverySeconds: 0.5
 --- !u!65 &4689798317987169962
 BoxCollider:
   m_ObjectHideFlags: 0
