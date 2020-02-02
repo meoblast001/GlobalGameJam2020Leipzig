@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9debe9a70fcc7a607b68f9da53aa7be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketStartDistance: 300
   generateRocketSeconds: 1
+  generateBigRocketSeconds: 30
+  player: {fileID: 0}

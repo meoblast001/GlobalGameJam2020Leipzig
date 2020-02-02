@@ -5,27 +5,33 @@ using Zenject;
 
 public class RocketGenerator : MonoBehaviour
 {
-    public float rocketStartDistance = 50f;
+    public float rocketStartDistance = 300f;
     public float generateRocketSeconds = 1f;
+    public float generateBigRocketSeconds = 30f;
 
     [SerializeField] GameObject player;
 
     private System.Random random = new System.Random();
 
     [Inject]
-    private Rocket.Factory rocketFactory;
+    private Rocket.RocketFactory rocketFactory;
+    [Inject]
+    private Rocket.BigRocketFactory bigRocketFactory;
 
     void Start()
     {
-        this.StartCoroutine(this.GenerateRocket(() => this.generateRocketSeconds));
+        this.StartCoroutine(this.GenerateRocket(this.rocketFactory, () => this.generateRocketSeconds));
+        this.StartCoroutine(this.GenerateRocket(this.bigRocketFactory, () => generateBigRocketSeconds));
     }
 
-    private IEnumerator GenerateRocket(Func<float> secondsCallback)
+    private IEnumerator GenerateRocket(PlaceholderFactory<Rocket> factory, Func<float> secondsCallback)
     {
+        yield return new WaitForSeconds(secondsCallback());
+
         var angle = (float) this.random.NextDouble() * 360f;
         var position = this.transform.position + (DegreeToVector(angle) * this.rocketStartDistance);
 
-        var rocket = this.rocketFactory.Create();
+        var rocket = factory.Create();
         rocket.transform.SetParent(this.player.transform);
         rocket.transform.localPosition = position;
         rocket.transform.position
@@ -33,8 +39,7 @@ public class RocketGenerator : MonoBehaviour
         var playerPos = this.player.transform.position;
         rocket.transform.LookAt(new Vector3(playerPos.x, rocket.transform.position.y, playerPos.z));
 
-        yield return new WaitForSeconds(secondsCallback());
-        this.StartCoroutine(this.GenerateRocket(secondsCallback));
+        this.StartCoroutine(this.GenerateRocket(factory, secondsCallback));
     }
 
     private static Vector3 DegreeToVector(float degree)
