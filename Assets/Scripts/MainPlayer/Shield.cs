@@ -10,9 +10,11 @@ public class Shield : MonoBehaviour
     void Awake()
     {
         this.controls = new InputMaster();
-        this.controls.MainPlayer.RotateShield.started += ctx => this.movement = ctx.ReadValue<Vector2>();
-        this.controls.MainPlayer.RotateShield.performed += ctx => this.movement = ctx.ReadValue<Vector2>();
-        this.controls.MainPlayer.RotateShield.canceled += ctx => this.movement = ctx.ReadValue<Vector2>();
+    }
+
+    void Update()
+    {
+        this.RotateShield(this.controls.MainPlayer.RotateShield.ReadValue<Vector2>());
     }
 
     void OnEnable()
@@ -23,5 +25,11 @@ public class Shield : MonoBehaviour
     void OnDisable()
     {
         this.controls.Disable();
+    }
+
+    private void RotateShield(Vector2 direction)
+    {
+        var lookPoint = this.transform.position + new Vector3(direction.x, 0f, direction.y);
+        this.transform.LookAt(lookPoint);
     }
 }
