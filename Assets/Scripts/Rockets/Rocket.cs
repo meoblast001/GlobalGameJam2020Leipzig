@@ -1,24 +1,16 @@
 ﻿using UnityEngine;
 using Zenject;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Rocket : MonoBehaviour
 {
     public class Factory : PlaceholderFactory<Rocket>
     {
     }
 
-    public float speed = 5f;
-
-    private Rigidbody rb;
-
-    void Start()
-    {
-        this.rb = this.GetComponent<Rigidbody>();
-    }
+    public float speed = 2f;
 
     void Update()
     {
-        this.rb.MovePosition(Vector3.forward * this.speed);
+        this.transform.localPosition += this.transform.localRotation * Vector3.forward * this.speed;
     }
 }
