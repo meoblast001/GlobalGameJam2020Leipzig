@@ -340,6 +340,128 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "VRPlayer",
+            "id": "e6aaaae2-b461-485d-9bb4-92d268fa34d0",
+            "actions": [
+                {
+                    "name": "TriggerRight",
+                    "type": "Value",
+                    "id": "b2150969-83b8-48c7-bc8e-03b34e7f87d9",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TriggerLeft",
+                    "type": "Value",
+                    "id": "772aa349-0738-404b-b37c-34847b03d2a4",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftPosition",
+                    "type": "Button",
+                    "id": "a1e93b21-43b9-4d4c-9c55-f486fbde98bb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftRotation",
+                    "type": "Button",
+                    "id": "eef00d9d-555f-471b-80d5-642e4ded4aac",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightPosition",
+                    "type": "Button",
+                    "id": "fe59944a-7134-4165-9eea-41662e53fc2b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightRotation",
+                    "type": "Value",
+                    "id": "3364ad72-e2a5-46d4-8899-0d3128bf5926",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b8db92d0-ddf6-4836-82f2-877946480083",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "74137842-09b1-4862-95ba-032d9a36b8da",
+                    "path": "<XRController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba7c87c2-61e0-4c7e-a4cd-a81b1e9cc119",
+                    "path": "<XRController>{LeftHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a0f1dc6-f7eb-4411-9566-ba827534389e",
+                    "path": "<XRController>{LeftHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "006d31c1-e130-40f5-b544-29f3e0d0624c",
+                    "path": "<XRController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32b3a018-17d8-4611-9eb2-c526e4cd07cf",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
