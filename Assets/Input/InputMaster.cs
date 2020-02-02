@@ -41,6 +41,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Shield"",
+                    ""type"": ""Button"",
+                    ""id"": ""631e6d09-2adc-44ea-9d69-2db9bb612da3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateShield"",
+                    ""type"": ""Value"",
+                    ""id"": ""867cf2dd-f70a-43b2-905b-660305a3c122"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -351,6 +367,138 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""RotateCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16758731-cc3a-4e5b-96ed-8db08cc86bd4"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Shield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79698eb8-4e7b-48c1-87fd-bf9fed8bb01c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Shield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""IJKL"",
+                    ""id"": ""8420dc17-3b7e-4306-b722-f66c10dbd9a2"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""50b51cb8-bc0a-4dd3-bdf2-ad4cf3cc869d"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""84ceaebe-40f3-4209-b9cf-bbc9620de96c"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b23b7979-e709-4bb8-844a-f88cd3c48d06"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""71e2a5a8-dbf4-4a46-8d77-d92ca8602325"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""RightStick"",
+                    ""id"": ""ac5eea0b-7a34-4417-8bef-15e4423adee6"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""13c93dc4-a3d3-469d-bea6-f97e793c747a"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""0420434f-cad6-40e9-b764-7add3e1140b8"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""3cbe95d6-bfb4-450e-9619-2f6426658d55"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""bbb10387-4a7e-462a-8610-dd4be61aa34b"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RotateShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -512,6 +660,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_MainPlayer_Movement = m_MainPlayer.FindAction("Movement", throwIfNotFound: true);
         m_MainPlayer_Jump = m_MainPlayer.FindAction("Jump", throwIfNotFound: true);
         m_MainPlayer_RotateCamera = m_MainPlayer.FindAction("RotateCamera", throwIfNotFound: true);
+        m_MainPlayer_Shield = m_MainPlayer.FindAction("Shield", throwIfNotFound: true);
+        m_MainPlayer_RotateShield = m_MainPlayer.FindAction("RotateShield", throwIfNotFound: true);
         // VRPlayer
         m_VRPlayer = asset.FindActionMap("VRPlayer", throwIfNotFound: true);
         m_VRPlayer_TriggerRight = m_VRPlayer.FindAction("TriggerRight", throwIfNotFound: true);
@@ -572,6 +722,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_MainPlayer_Movement;
     private readonly InputAction m_MainPlayer_Jump;
     private readonly InputAction m_MainPlayer_RotateCamera;
+    private readonly InputAction m_MainPlayer_Shield;
+    private readonly InputAction m_MainPlayer_RotateShield;
     public struct MainPlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -579,6 +731,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_MainPlayer_Movement;
         public InputAction @Jump => m_Wrapper.m_MainPlayer_Jump;
         public InputAction @RotateCamera => m_Wrapper.m_MainPlayer_RotateCamera;
+        public InputAction @Shield => m_Wrapper.m_MainPlayer_Shield;
+        public InputAction @RotateShield => m_Wrapper.m_MainPlayer_RotateShield;
         public InputActionMap Get() { return m_Wrapper.m_MainPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -597,6 +751,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @RotateCamera.started -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateCamera;
                 @RotateCamera.performed -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateCamera;
                 @RotateCamera.canceled -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateCamera;
+                @Shield.started -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnShield;
+                @Shield.performed -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnShield;
+                @Shield.canceled -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnShield;
+                @RotateShield.started -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateShield;
+                @RotateShield.performed -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateShield;
+                @RotateShield.canceled -= m_Wrapper.m_MainPlayerActionsCallbackInterface.OnRotateShield;
             }
             m_Wrapper.m_MainPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -610,6 +770,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @RotateCamera.started += instance.OnRotateCamera;
                 @RotateCamera.performed += instance.OnRotateCamera;
                 @RotateCamera.canceled += instance.OnRotateCamera;
+                @Shield.started += instance.OnShield;
+                @Shield.performed += instance.OnShield;
+                @Shield.canceled += instance.OnShield;
+                @RotateShield.started += instance.OnRotateShield;
+                @RotateShield.performed += instance.OnRotateShield;
+                @RotateShield.canceled += instance.OnRotateShield;
             }
         }
     }
@@ -710,6 +876,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnRotateCamera(InputAction.CallbackContext context);
+        void OnShield(InputAction.CallbackContext context);
+        void OnRotateShield(InputAction.CallbackContext context);
     }
     public interface IVRPlayerActions
     {
