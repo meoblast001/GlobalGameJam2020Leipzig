@@ -63,7 +63,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -433,6 +433,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRCameraRig
       objectReference: {fileID: 0}
+    - target: {fileID: 8928024264492889736, guid: c3bc57f8c9e7c0b439f290685bc2af35,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8928024264493050536, guid: c3bc57f8c9e7c0b439f290685bc2af35,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -536,6 +541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3204104449242572771, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 768
       objectReference: {fileID: 0}
     - target: {fileID: 3204104449242572773, guid: a1e8afad019782249a1da33d98f7d114,
         type: 3}
