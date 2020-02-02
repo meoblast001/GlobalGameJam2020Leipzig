@@ -31,7 +31,7 @@ public class HealthDisplay : MonoBehaviour
         switch (update.Part)
         {
             case HealthStatus.HealthPart.Screen:
-                this.screenText.text = this.healthStatus.LeftLeg.ToString();
+                this.screenText.text = this.healthStatus.Screen.ToString();
                 break;
             case HealthStatus.HealthPart.Hip:
                 this.hipText.text = this.healthStatus.Hip.ToString();

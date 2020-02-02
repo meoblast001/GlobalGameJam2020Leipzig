@@ -45,6 +45,14 @@ public class Rocket : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            var takeDamage = collider.gameObject.GetComponent<TakeDamage>();
+            if (takeDamage != null)
+            {
+                if (this.bigRocket)
+                    takeDamage.BigRocketDamage();
+                else
+                    takeDamage.RocketDamage();
+            }
             GameObject.Destroy(this.gameObject);
         }
     }
