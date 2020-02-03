@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ComanderVoice : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public AudioSource randomSound;
     public int randx, randy;
 
     public AudioClip[] audioSources;
+
+    // Start is called before the first frame update
     void Start()
     {
         CallAudio();
@@ -24,12 +24,11 @@ public class ComanderVoice : MonoBehaviour
     // Update is called once per frame
     void RandomSoundness()
     {
-        randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
-        randomSound.Play();
-        
-       // if (!randomSound.isPlaying)
-        {
-            CallAudio();
+        if (!this.randomSound.isPlaying) {
+            randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
+            randomSound.Play();
         }
+        
+        CallAudio();
     }
 }
