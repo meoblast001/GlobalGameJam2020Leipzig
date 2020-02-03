@@ -52,3 +52,9 @@ Assets/Plugins/
 Assets/XR/
 Assets/Oculus/
 Assets/MediumMechStriker/
+
+# FMOD
+Assets/Editor Default Resources/FMOD/
+Assets/Gizmos/FMOD/
+Assets/Plugins/FMOD/
+fmod_editor.log
