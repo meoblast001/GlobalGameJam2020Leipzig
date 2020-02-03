@@ -54,3 +54,9 @@ Assets/Oculus/
 Assets/MediumMechStriker/
 Assets/Models/Demo Scene/
 Assets/Models/Drone/
+
+# FMOD
+Assets/Editor Default Resources/FMOD/
+Assets/Gizmos/FMOD/
+Assets/Plugins/FMOD/
+fmod_editor.log
