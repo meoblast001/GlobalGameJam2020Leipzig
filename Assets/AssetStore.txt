@@ -1,8 +1,0 @@
-The following assets come from the asset store and must be included (using default settings) into the default directory
-
-========================================================================================================================
-
-* Extenject Dependency Injection IOC
-* Medium Mech Striker
-* Oculus Integration
-* Low poly combat drone
