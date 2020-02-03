@@ -59,3 +59,11 @@ Assets/cgtrader/
 Assets/Rune Assets/
 Assets/Streets/
 Assets/T90/
+=======
+
+# FMOD
+Assets/Editor Default Resources/FMOD/
+Assets/Gizmos/FMOD/
+Assets/Plugins/FMOD/
+fmod_editor.log
+
