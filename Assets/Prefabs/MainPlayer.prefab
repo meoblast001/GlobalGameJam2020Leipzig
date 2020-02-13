@@ -446,7 +446,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -856,6 +856,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2695944065028174315, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695944065028174315, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695944065028174315, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3204104448652907923, guid: a1e8afad019782249a1da33d98f7d114,
         type: 3}
       propertyPath: m_Layer
@@ -904,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 3204104449242572773, guid: a1e8afad019782249a1da33d98f7d114,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3204104449552228678, guid: a1e8afad019782249a1da33d98f7d114,
         type: 3}
@@ -995,6 +1010,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457061519888852451, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457061519888852451, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457061519888852451, guid: a1e8afad019782249a1da33d98f7d114,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1e8afad019782249a1da33d98f7d114, type: 3}
